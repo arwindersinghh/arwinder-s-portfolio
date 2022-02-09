@@ -22,8 +22,18 @@ import {
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Header from './Header';
 import About from './About';
-import Skills from './Skills';
+//import Skills from './Skills';
+import EmptySkills from './EmptySkills';
 import Projects from './Projects';
+import dynamic from 'next/dynamic';
+import useInView from 'react-cool-inview';
+
+
+const Skills = dynamic(() => import ("./Skills"));
+
+
+
+
 
 
 
@@ -32,8 +42,23 @@ export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+//   const { observe, inView } = useInView({
+//       unobserveOnEnter : true,      
+//   })
+const { observe, unobserve, inView, scrollDirection, entry } = useInView({
     
-  const Links = ['About', 'Skills', 'Projects'];
+    onChange: ({ inView, scrollDirection, entry, observe, unobserve }) => {      
+
+      unobserve(); 
+      observe(); 
+    }
+    
+    
+  });
+  
+    
+  const Links = ['About', 'Skills', 'Projects', 'Contact'];
 
 
 const NavLink = ({ children }) => (
@@ -91,7 +116,7 @@ const NavLink = ({ children }) => (
       <Header />      
       <About />  
       <Divider />
-      <Skills /> 
+      <div ref={observe}>{inView ? <Skills /> : <EmptySkills /> }</div>
       <Divider />
       <Projects />         
     </>

@@ -12,6 +12,7 @@ import {
     Box,
     Button,
     useMediaQuery,
+    VStack,
   } from '@chakra-ui/react';
   import {
     IoAnalyticsSharp,
@@ -62,7 +63,8 @@ import NextLink from 'next/link'
                 />
               }>              
             </Stack>
-            <SimpleGrid columns={2} spacingX='40px' spacingY='20px'>
+            
+            <SimpleGrid columns={2} spacingX='80px' spacingY='20px'>
             {techStack.map((skill, i) => {
                 return (
                     <motion.div key={i} whileHover={{ scale: 1.1 }}><Text                    
@@ -79,7 +81,7 @@ import NextLink from 'next/link'
             </motion.div>
                 )
             })}            
-            </SimpleGrid>            
+            </SimpleGrid>                        
             {isNotSmallScreen ? <NextLink href={website}><Button> Visit </Button></NextLink> : ""}
             {isNotSmallScreen ? <NextLink href={github}><Button> Source </Button></NextLink> : ""}
           </Stack>
