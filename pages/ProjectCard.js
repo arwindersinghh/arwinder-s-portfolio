@@ -7,40 +7,17 @@ import {
     Text,
     Stack,
     StackDivider,
-    Icon,
-    useColorModeValue,
-    Box,
+    useColorModeValue,    
     Button,
-    useMediaQuery,
-    VStack,
-  } from '@chakra-ui/react';
-  import {
-    IoAnalyticsSharp,
-    IoLogoBitcoin,
-    IoSearchSharp,
-  } from 'react-icons/io5';
-  import { ReactElement } from 'react';
+    useMediaQuery    
+  } from '@chakra-ui/react';    
 import { motion } from 'framer-motion';
 import NextLink from 'next/link'
+import Tilt from 'react-tilt';
   
 
   
-//   const Feature = ({ text, icon, iconBg }) => {
-//     return (
-//       <Stack direction={'row'} align={'center'}>
-//         <Flex
-//           w={8}
-//           h={8}
-//           align={'center'}
-//           justify={'center'}
-//           rounded={'full'}
-//           bg={iconBg}>
-//           {icon}
-//         </Flex>
-//         <Text fontWeight={600}>{text}</Text>
-//       </Stack>
-//     );
-//   };
+
   
   export default function ProjectCard({website, github, text, title, techStack, imgSrc}) {
       const bgColorToUse = useColorModeValue('red.500', 'red.200');
@@ -86,14 +63,13 @@ import NextLink from 'next/link'
             {isNotSmallScreen ? <NextLink href={github}><Button> Source </Button></NextLink> : ""}
           </Stack>
           <Flex>              
-            <Image
+            <Tilt><Image
               rounded={'md'}
+              height="100%"
               alt={'feature image'}
-              src={
-                imgSrc
-              }
+              src={imgSrc}
               objectFit={'cover'}
-            />            
+            /></Tilt>
           </Flex>
           {!isNotSmallScreen ? <SimpleGrid spacing={'20px'} columns={2}>
           <NextLink href={website}><Button> Visit </Button></NextLink>
