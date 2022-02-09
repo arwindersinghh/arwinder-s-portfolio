@@ -3,6 +3,7 @@ import { Box, Button, Center, Circle, Flex, Image, Stack, Text, useColorMode, us
 import { DownloadIcon, ViewIcon } from "@chakra-ui/icons"
 import TypewriterComponent from "typewriter-effect";
 import Tilt from 'react-tilt';
+import { motion } from "framer-motion";
 
 
 const Header = () => {
@@ -14,16 +15,9 @@ const Header = () => {
     
     return (
         <Stack mt={3}>            
-            <Circle      
-            zIndex={-1}                   
-            position = "absolute"
-            bg =  "red.300"
-            opacity = "0.1"
-            w = "300px"
-            h = "300px"
-            alignSelf = "flex-end"            
-            />            
-               <Center><Tilt><Image
+            <motion.div transition={{ duration: 2, repeat: 3}} animate={{ x: [0, 100, -100, 0] }} style={{ borderRadius: "100%", backgroundColor:"#fcb1b1", opacity: "0.3", zIndex:-1, position:"absolute", width: "300px", height: "300px", alignSelf:"center" }}><Circle/>
+            </motion.div>                                            
+               <Center><Tilt><Image                    
                     alignSelf="center"                            
                     borderRadius="full"
                     backgroundColor = "transparent"
@@ -39,15 +33,8 @@ const Header = () => {
           loop: true,
         }}
         /></Box></Center>
-            <Circle          
-            zIndex={-1}   
-            position="absolute"
-            bg =  "red.300"
-            opacity = "0.1"
-            w = "300px"
-            h = "300px"
-            alignSelf = "flex-start"
-            />             
+            <motion.div transition={{ duration: 2, repeat: 3}} animate={{ x: [0, -100, 100, 0] }} style={{ borderRadius: "100%", backgroundColor:"#fcb1b1", opacity: "0.3", zIndex:-1, position:"absolute", width: "300px", height: "300px", alignSelf:"center" }}><Circle/>
+            </motion.div>
         </Stack>
     )
 }

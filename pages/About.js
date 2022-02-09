@@ -1,5 +1,6 @@
 
 import { DownloadIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link'
 import {
   Box,
   Heading,
@@ -12,6 +13,7 @@ import {
   createIcon,
   HStack,
   IconButton,
+  Link,
 } from '@chakra-ui/react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -45,23 +47,24 @@ export default function About() {
             alignSelf={'center'}
             position={'relative'}>
             <motion.button                        
-            whileHover={{ transition: { duration: 1}, scale: 1.2 }}><Button
-              leftIcon={<DownloadIcon />}
+            whileHover={{ transition: { duration: 1}, scale: 1.2 }}><Link href="resume.pdf"><Button
+              isFullWidth
+              leftIcon={<DownloadIcon />}              
               colorScheme={'red'}
               variant="outline"              
-              px={6}
+              px={0}
               _hover={{
                 bg: useColorModeValue('red.200', 'red.800')
               }}>            
               Resume
-            </Button></motion.button>
+            </Button></Link></motion.button>
             <HStack mt="40px" spacing="24px" justify="center">
-            <motion.div whileHover={{ scale: 1.1 }}><IconButton _hover={{
+            <motion.div whileHover={{ scale: 1.1 }}><Link href="https://github.com/arwindersinghh"><IconButton _hover={{
                 bg: useColorModeValue('red.800', 'red.200')
-              }} colorScheme="red" size="lg" icon={<AiFillGithub />} isRound={true}></IconButton></motion.div>
-            <motion.div whileHover={{ scale: 1.2 }}><IconButton _hover={{
+              }} colorScheme="red" size="lg" icon={<AiFillGithub />} isRound={true}></IconButton></Link></motion.div>
+            <motion.div whileHover={{ scale: 1.2 }}><Link href="https://www.linkedin.com/in/arwindersinghh"><IconButton _hover={{
                 bg: useColorModeValue('red.800', 'red.200')
-              }} colorScheme="red" size="lg" icon={<AiFillLinkedin />} isRound={true}></IconButton></motion.div>
+              }} colorScheme="red" size="lg" icon={<AiFillLinkedin />} isRound={true}></IconButton></Link></motion.div>
         </HStack>
           </Stack>
         </Stack>
