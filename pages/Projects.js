@@ -56,7 +56,7 @@ import ProjectCard from './ProjectCard';
   
   export default function Projects() {
     return (        
-      <Box p={4}>
+      <Box id="Projects" p={4}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
           <Heading fontSize={'3xl'}>Projects</Heading>
           <Text color={'gray.600'} fontSize={'xl'}>

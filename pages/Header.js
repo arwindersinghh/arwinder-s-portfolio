@@ -1,6 +1,5 @@
 import { Box, Button, Center, Circle, Flex, Image, Stack, Text, useColorMode, useMediaQuery } from "@chakra-ui/react";
 //import { Wave, Random } from 'react-animated-text'
-import { DownloadIcon, ViewIcon } from "@chakra-ui/icons"
 import TypewriterComponent from "typewriter-effect";
 import Tilt from 'react-tilt';
 import { motion } from "framer-motion";
@@ -14,7 +13,7 @@ const Header = () => {
     const [isNotSmallScreen] = useMediaQuery('(min-width: 600px)');
     
     return (
-        <Stack mt={3}>            
+        <Stack id="About" mt={3}>            
             <motion.div transition={{ duration: 2, repeat: 3}} animate={{ x: [0, 100, -100, 0] }} style={{ borderRadius: "100%", backgroundColor:"#fcb1b1", opacity: "0.3", zIndex:-1, position:"absolute", width: "300px", height: "300px", alignSelf:"center" }}><Circle/>
             </motion.div>                                            
                <Center><Tilt><Image                    

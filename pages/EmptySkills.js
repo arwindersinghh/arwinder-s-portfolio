@@ -15,7 +15,7 @@ const EmptySkills = () => {
     
 
     return (
-    <Container my={10}>
+    <Container id="Skills" my={10}>
         <Heading type="vertical">Skills <CheckIcon /></Heading>
 <Stack mt={5} spacing={5}>
   <Heading color={useColorModeValue('red.500', 'red.200')} size="sm"> JavaScript </Heading><Progress hasStripe isAnimated colorScheme='blue' size='lg' value={0} />

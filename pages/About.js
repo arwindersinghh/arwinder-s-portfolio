@@ -19,7 +19,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 export default function About() {
-  return (
+  return (    
       <Container my={5} maxW={'2xl'}>
         {/* <Stack
           as={Box}                              
@@ -37,7 +37,7 @@ export default function About() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-          Software Engineer who has built multiple production level applications and look forward to improving 
+          Software Engineer who has built multiple production level applications and looks forward to improving 
           user experiences through problem solving with like-minded people.
           </Text>
           <Stack
@@ -47,7 +47,7 @@ export default function About() {
             alignSelf={'center'}
             position={'relative'}>
             <motion.button                        
-            whileHover={{ transition: { duration: 1}, scale: 1.2 }}><Link href="resume.pdf"><Button
+            whileHover={{ scale: 1.1 }}><Link href="resume.pdf"><Button
               isFullWidth
               leftIcon={<DownloadIcon />}              
               colorScheme={'red'}
@@ -68,7 +68,7 @@ export default function About() {
         </HStack>
           </Stack>
         </Stack>
-      </Container>    
+      </Container>          
   );
 }
 

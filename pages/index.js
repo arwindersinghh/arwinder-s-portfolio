@@ -19,7 +19,8 @@ import {
   IconButton,
   Divider,
 } from '@chakra-ui/react';
-import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link'
 import Header from './Header';
 import About from './About';
 //import Skills from './Skills';
@@ -27,6 +28,7 @@ import EmptySkills from './EmptySkills';
 import Projects from './Projects';
 import dynamic from 'next/dynamic';
 import useInView from 'react-cool-inview';
+import Footer from './Footer';
 
 
 const Skills = dynamic(() => import ("./Skills"));
@@ -47,22 +49,25 @@ export default function Nav() {
 //       unobserveOnEnter : true,      
 //   })
 const { observe, unobserve, inView, scrollDirection, entry } = useInView({
-    
+    threshold: 0.25,
     onChange: ({ inView, scrollDirection, entry, observe, unobserve }) => {      
 
-      unobserve(); 
-      observe(); 
+      observe();
+         
+    },
+    onEnter: ({ unobserve }) => {
+      unobserve()
     }
     
     
   });
   
     
-  const Links = ['About', 'Skills', 'Projects', 'Contact'];
+  const Links = ['About', 'Skills', 'Projects'];
 
 
-const NavLink = ({ children }) => (
-  <Link
+const NavLink = ({ children }) => {  
+  return (<NextLink href={`#${children[1]}`} passHref><Link
     px={2}
     py={1}
     rounded={'md'}    
@@ -71,10 +76,11 @@ const NavLink = ({ children }) => (
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
     color={useColorModeValue('red.400', 'red.200')}
-    href={'#'}>
+    >
     {children}
-  </Link>
-);
+  </Link></NextLink>)
+};
+
   return (
     <>
       <Box zIndex={200} sx={{ position: 'sticky', top: '0' }} bg={useColorModeValue('gray.100', 'gray.900')} px={4}>            
@@ -93,6 +99,7 @@ const NavLink = ({ children }) => (
                 {Links.map((link) => (
                     <NavLink key={link}> {link} </NavLink>
                 ))}
+                <Link style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={useColorModeValue('red.400', 'red.200')} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
             </HStack>        
           <Flex alignItems={'center'}>
                             
@@ -118,7 +125,8 @@ const NavLink = ({ children }) => (
       <Divider />
       <div ref={observe}>{inView ? <Skills /> : <EmptySkills /> }</div>
       <Divider />
-      <Projects />         
+      <Projects />
+      <Footer />
     </>
   );
 }
