@@ -4,7 +4,7 @@ import Tilt from 'react-tilt';
 import { motion } from "framer-motion";
 
 
-const Header = (props) => {    
+const Header = () => {    
     return (
         <Stack id="About" mt={3}>            
             <motion.div transition={{ duration: 2, repeat: 3}} animate={{ x: [0, 100, -100, 0] }} style={{ borderRadius: "100%", backgroundColor:"#fcb1b1", opacity: "0.3", zIndex:-1, position:"absolute", width: "300px", height: "300px", alignSelf:"center" }}>

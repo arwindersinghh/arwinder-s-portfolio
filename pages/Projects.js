@@ -11,10 +11,10 @@ import {
     StackDivider,
     useColorModeValue,    
     Button,
-    useMediaQuery
+    useMediaQuery,
+    Link
   } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import NextLink from 'next/link'
 import Tilt from 'react-tilt';
 
 function ProjectCard({website, github, text, title, techStack, imgSrc}) {
@@ -57,8 +57,8 @@ function ProjectCard({website, github, text, title, techStack, imgSrc}) {
             )
         })}            
         </SimpleGrid>                        
-        {isNotSmallScreen ? <NextLink href={website}><Button> Visit </Button></NextLink> : ""}
-        {isNotSmallScreen ? <NextLink href={github}><Button> Source </Button></NextLink> : ""}
+        {isNotSmallScreen ? <Link style={{ textDecoration: "none" }} href={website}><Button colorScheme="blue"> Visit </Button></Link> : ""}
+        {isNotSmallScreen ? <Link style={{ textDecoration:"none" }} href={github}><Button colorScheme="blue" > Source </Button></Link> : ""}
       </Stack>
       <Flex>              
         <Tilt><Image
@@ -70,8 +70,8 @@ function ProjectCard({website, github, text, title, techStack, imgSrc}) {
         /></Tilt>
       </Flex>
       {!isNotSmallScreen ? <SimpleGrid spacing={'20px'} columns={2}>
-      <NextLink href={website}><Button> Visit </Button></NextLink>
-      <NextLink href={github}><Button> Source </Button></NextLink>
+      <Link style={{ textDecoration: "none" }} href={website}><Button colorScheme="blue"> Visit </Button></Link>
+      <Link style={{ textDecoration: "none" }} href={github}><Button colorScheme="blue"> Source </Button></Link>
       </SimpleGrid>
       : ""}         
     </SimpleGrid>        
@@ -120,7 +120,7 @@ function ProjectCard({website, github, text, title, techStack, imgSrc}) {
       }
   ]
   
-  export default function Projects(props) {
+  export default function Projects() {
     return (        
       <Box id="Projects" p={4}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>

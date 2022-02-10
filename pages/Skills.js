@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 
 
-const Skills = (props) => {
+const Skills = () => {
         
     
     let [jsProgress, setjsProgress] = useState(0)
