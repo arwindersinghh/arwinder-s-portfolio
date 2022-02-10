@@ -11,6 +11,7 @@ import dynamic from 'next/dynamic';
 import useInView from 'react-cool-inview';
 import Footer from './Footer';
 import Navbar from './Navbar'
+import Head from 'next/head'
 
 
 const Skills = dynamic(() => import ("./Skills"));
@@ -41,7 +42,8 @@ const { observe, inView } = useInView({
   
     
   return (
-    <>   
+    <> 
+      <Head><meta name="viewport" content="width=device-width, initial-scale=1"/></Head>
       <Navbar />   
       <Header />      
       <About />  
