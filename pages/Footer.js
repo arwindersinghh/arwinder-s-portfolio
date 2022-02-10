@@ -39,7 +39,7 @@ import {
     );
   };
     
-  export default function Footer() {
+  export default function Footer(props) {
 
     const { colorMode, toggleColorMode } = useColorMode();
     

@@ -8,7 +8,7 @@ import { Container, Heading, Progress, Stack, useColorModeValue } from "@chakra-
 
 
 
-const EmptySkills = () => {
+const EmptySkills = (props) => {
   return (
     <Container id="Skills" my={10}>        
   <Stack mt={5} spacing={5}>

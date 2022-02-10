@@ -14,7 +14,7 @@ import {
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
-export default function About() {
+export default function About(props) {
   return (    
       <Container my={5} maxW={'2xl'}>        
           <Stack mt={8} spacing={8}>

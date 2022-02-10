@@ -17,7 +17,7 @@ import {
 
 
 
-export default function Nav(){
+export default function Nav(props){
 
 
 const { isOpen, onOpen, onClose } = useDisclosure();

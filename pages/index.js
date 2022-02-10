@@ -22,7 +22,7 @@ const Skills = dynamic(() => import ("./Skills"));
 
 
 
-export default function Home() {  
+export default function Home(props) {  
 
 
 const { observe, unobserve, inView, scrollDirection, entry } = useInView({
