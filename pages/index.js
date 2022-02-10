@@ -19,7 +19,7 @@ import {
   IconButton,
   Divider,
 } from '@chakra-ui/react';
-import { CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { CheckIcon, CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link'
 import Header from './Header';
 import About from './About';
@@ -67,7 +67,8 @@ const { observe, unobserve, inView, scrollDirection, entry } = useInView({
       <Header />      
       <About />  
       <Divider />
-      <div ref={observe}>{inView ? <Skills /> : <EmptySkills /> }</div>
+      <Heading align="center">Skills <CheckIcon /></Heading>
+      <div ref={observe}>{inView ? <Skills /> : <EmptySkills /> }</div>      
       <Divider />
       <Projects />
       <Footer />

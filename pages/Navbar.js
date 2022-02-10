@@ -41,9 +41,10 @@ const Links = ['About', 'Skills', 'Projects'];
 
 const { isOpen, onOpen, onClose } = useDisclosure();
 const { colorMode, toggleColorMode } = useColorMode();
+const colorModeVal = useColorModeValue('red.400', 'red.200');
 
 
-const [hovered, isHovered] = useState(false);
+
 
 //use react scroll link imported above...
 const NavLink = ({ children }) => {
@@ -63,7 +64,7 @@ const NavLink = ({ children }) => {
   </Link>)
 };
 
-console.log(isHovered)
+
 
   return (    
       <Box zIndex={200} sx={{ position: 'sticky', top: '0' }} bg={useColorModeValue('gray.100', 'gray.900')} px={4}>            
@@ -86,16 +87,12 @@ console.log(isHovered)
     onClick={() => scroll.scrollToTop()} fontStyle="italic" fontWeight={'bold'} color={useColorModeValue('red.400', 'red.200')}> ASDev </Box>
         <HStack spacing={20}
             as = {'nav'}
-            display = {{ base: 'none', md: 'flex' }} >                
-                {Links.map((link) => {
-                    return (
-                        <ReactScrollLink key={link} to={`${link}`} smooth={true} duration={1000}>
-                          <NavLink key={link}> {link} </NavLink>  
-                        </ReactScrollLink>
-                    )
-                })}
-                <Link style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={useColorModeValue('red.400', 'red.200')} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
+            display = {{ base: 'none', md: 'flex' }} >                                
+                <ReactScrollLink to="About" smooth={true} duration={1000} offset={250}><NavLink> About </NavLink></ReactScrollLink>
+                <ReactScrollLink to="Skills" smooth={true} duration={1000} offset={-150}><NavLink> Skills </NavLink></ReactScrollLink>
+                <ReactScrollLink to="Projects" smooth={true} duration={1000} offset={-68}><NavLink> Projects </NavLink></ReactScrollLink>                
             </HStack>        
+            <Link display = {{ base: 'none', md: 'flex' }} style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={useColorModeValue('red.400', 'red.200')} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
           <Flex alignItems={'center'}>
                             
             <Stack direction={'row'} spacing={7}>
@@ -108,9 +105,10 @@ console.log(isHovered)
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <ReactScrollLink onClick={() => console.log(link)} key={link} to={`${link}`} smooth={true} duration={1000}><NavLink>{link}</NavLink></ReactScrollLink>
-              ))}              
+                <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="About" smooth={true} duration={1000} offset={75}><NavLink> About </NavLink></ReactScrollLink>
+                <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="Skills" smooth={true} duration={1000} offset={-325}><NavLink> Skills </NavLink></ReactScrollLink>
+                <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="Projects" smooth={true} duration={1000} offset={-242}><NavLink> Projects </NavLink></ReactScrollLink>                
+              <Link style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={colorModeVal} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
             </Stack>
           </Box>
         ) : null}        
