@@ -43,7 +43,7 @@ export default function About() {
               leftIcon={<DownloadIcon />}              
               colorScheme={'red'}
               variant="outline"              
-              px={0}
+              px={5}              
               _hover={{
                 bg: useColorModeValue('red.200', 'red.800')
               }}>            
