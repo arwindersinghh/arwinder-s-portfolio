@@ -1,43 +1,23 @@
 import {
     Box,
-    Flex,
-    Avatar,
+    Flex,    
     Link,
     Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,  
     useColorModeValue,
     Stack,
     useColorMode,
-    useDisclosure,
-    Center,
-    Heading,
+    useDisclosure,    
     HStack,
-    IconButton,
-    Divider,
+    IconButton,    
   } from '@chakra-ui/react';
-  import { CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-  import NextLink from 'next/link'
-  import Header from './Header';
-  import About from './About';
-  //import Skills from './Skills';
-  import EmptySkills from './EmptySkills';
-  import Projects from './Projects';
-  import dynamic from 'next/dynamic';
-  import useInView from 'react-cool-inview';
-  import Footer from './Footer';
-  import { Link as ReactScrollLink } from 'react-scroll'
-  import * as Scroll from 'react-scroll'
+  import { CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';  
+  import { Link as ReactScrollLink } from 'react-scroll'  
   import { animateScroll as scroll } from 'react-scroll'
-import { useState } from 'react';
+
 
 
 export default function Nav(){
 
-const Links = ['About', 'Skills', 'Projects'];
 
 const { isOpen, onOpen, onClose } = useDisclosure();
 const { colorMode, toggleColorMode } = useColorMode();
@@ -106,7 +86,7 @@ const NavLink = ({ children }) => {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
                 <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="About" smooth={true} duration={1000} offset={75}><NavLink> About </NavLink></ReactScrollLink>
-                <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="Skills" smooth={true} duration={1000} offset={-325}><NavLink> Skills </NavLink></ReactScrollLink>
+                <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="Skills" smooth={true} duration={1000} offset={-322}><NavLink> Skills </NavLink></ReactScrollLink>
                 <ReactScrollLink onClick={isOpen ? onClose : onOpen} to="Projects" smooth={true} duration={1000} offset={-242}><NavLink> Projects </NavLink></ReactScrollLink>                
               <Link style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={colorModeVal} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
             </Stack>
