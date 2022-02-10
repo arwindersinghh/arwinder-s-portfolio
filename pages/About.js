@@ -1,31 +1,22 @@
 
 import { DownloadIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link'
-import {
-  Box,
+import {  
   Heading,
   Container,
   Text,
   Button,
-  Stack,
-  Icon,
-  useColorModeValue,
-  createIcon,
+  Stack,  
+  useColorModeValue,  
   HStack,
   IconButton,
-  Link,
+  Link
 } from '@chakra-ui/react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 export default function About() {
   return (    
-      <Container my={5} maxW={'2xl'}>
-        {/* <Stack
-          as={Box}                              
-          textAlign={'center'}          
-          spacing={{ base: 8, md: 14 }}          
-          py={{ base: 20, md: 36 }}> */}
+      <Container my={5} maxW={'2xl'}>        
           <Stack mt={8} spacing={8}>
           <Heading
             fontWeight={600}

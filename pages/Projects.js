@@ -3,12 +3,8 @@ import {
     Box,
     Container,
     Heading,
-    SimpleGrid,
-    Icon,
     Text,
-    Stack,
-    HStack,
-    VStack,
+    Stack,    
   } from '@chakra-ui/react';
 import ProjectCard from './ProjectCard';
   

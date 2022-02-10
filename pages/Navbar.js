@@ -8,11 +8,12 @@ import {
     useColorMode,
     useDisclosure,    
     HStack,
-    IconButton,    
+    IconButton    
   } from '@chakra-ui/react';
   import { CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';  
   import { Link as ReactScrollLink } from 'react-scroll'  
   import { animateScroll as scroll } from 'react-scroll'
+  
 
 
 
@@ -24,9 +25,6 @@ const { colorMode, toggleColorMode } = useColorMode();
 const colorModeVal = useColorModeValue('red.400', 'red.200');
 
 
-
-
-//use react scroll link imported above...
 const NavLink = ({ children }) => {
       
   return (<Link
@@ -68,17 +66,16 @@ const NavLink = ({ children }) => {
         <HStack spacing={20}
             as = {'nav'}
             display = {{ base: 'none', md: 'flex' }} >                                
-                <ReactScrollLink to="About" smooth={true} duration={1000} offset={250}><NavLink> About </NavLink></ReactScrollLink>
-                <ReactScrollLink to="Skills" smooth={true} duration={1000} offset={-150}><NavLink> Skills </NavLink></ReactScrollLink>
-                <ReactScrollLink to="Projects" smooth={true} duration={1000} offset={-68}><NavLink> Projects </NavLink></ReactScrollLink>                
-            </HStack>        
-            <Link display = {{ base: 'none', md: 'flex' }} style={{ textDecoration:"none" }} href="mailto:arwindersingh.dev@gmail.com"><Button color={useColorModeValue('red.400', 'red.200')} variant="ghost" fontWeight="normal" leftIcon={<EmailIcon />}> Contact </Button></Link>
-          <Flex alignItems={'center'}>
-                            
+                <NavLink><ReactScrollLink to="About" smooth={true} duration={1000} offset={250}> About </ReactScrollLink></NavLink>
+                <NavLink><ReactScrollLink to="Skills" smooth={true} duration={1000} offset={-150}> Skills </ReactScrollLink></NavLink>
+                <NavLink><ReactScrollLink to="Projects" smooth={true} duration={1000} offset={-68}> Projects </ReactScrollLink></NavLink>                
+            </HStack>                    
+          <Flex alignItems={'center'}>          
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon color="yellow"/>}
-              </Button>
+              </Button>              
+              <Stack py={1} display={{ base: 'none', md: 'flex' }}><NavLink><a href="mailto:arwindersingh.dev@gmail.com"> Contact </a></NavLink></Stack>
             </Stack>
           </Flex>          
         </Flex>

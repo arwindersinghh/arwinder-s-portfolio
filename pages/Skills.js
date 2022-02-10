@@ -1,5 +1,4 @@
-import { CheckIcon } from "@chakra-ui/icons";
-import { Container, Flex, Heading, HStack, Progress, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Container, Heading, Progress, Stack, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 

@@ -1,4 +1,3 @@
-import { CheckIcon } from "@chakra-ui/icons";
 import { Container, Heading, Progress, Stack, useColorModeValue } from "@chakra-ui/react";
 
 
@@ -10,11 +9,7 @@ import { Container, Heading, Progress, Stack, useColorModeValue } from "@chakra-
 
 
 const EmptySkills = () => {
-
-
-    
-
-    return (
+  return (
     <Container id="Skills" my={10}>        
   <Stack mt={5} spacing={5}>
   <Heading color={useColorModeValue('red.500', 'red.200')} size="sm"> JavaScript </Heading><Progress hasStripe isAnimated colorScheme='blue' size='lg' value={0} />

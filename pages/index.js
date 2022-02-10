@@ -1,29 +1,10 @@
 import {
-  Box,
-  Flex,
-  Avatar,
-  Link,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,  
-  useColorModeValue,
-  Stack,
-  useColorMode,
-  useDisclosure,
-  Center,
-  Heading,
-  HStack,
-  IconButton,
-  Divider,
+  Heading,  
+  Divider
 } from '@chakra-ui/react';
-import { CheckIcon, CloseIcon, EmailIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link'
+import { CheckIcon } from '@chakra-ui/icons';
 import Header from './Header';
 import About from './About';
-//import Skills from './Skills';
 import EmptySkills from './EmptySkills';
 import Projects from './Projects';
 import dynamic from 'next/dynamic';
@@ -43,9 +24,7 @@ const Skills = dynamic(() => import ("./Skills"));
 
 export default function Home() {  
 
-//   const { observe, inView } = useInView({
-//       unobserveOnEnter : true,      
-//   })
+
 const { observe, unobserve, inView, scrollDirection, entry } = useInView({
     threshold: 0.25,
     onChange: ({ inView, scrollDirection, entry, observe, unobserve }) => {      
