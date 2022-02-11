@@ -63,7 +63,7 @@ function ProjectCard({website, github, text, title, techStack, imgSrc}) {
       <Flex>              
         <Tilt><Image
           rounded={'md'}
-          height={isNotSmallScreen ? "100%" : "200px"}
+          height={isNotSmallScreen ? "100%" : "400px"}
           alt={'feature image'}
           src={imgSrc}
           objectFit={'cover'}
